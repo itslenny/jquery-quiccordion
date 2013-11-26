@@ -1,5 +1,5 @@
 /*
- *      jQuery Quiccordion v0.8 
+ *      jQuery Quiccordion v1.0.4
  *
  *      An extremely quick, simple, lightweight, recursive accordion menu plugin
  *
@@ -20,7 +20,8 @@
                 preserveChildren: true,
                 openLevel: 0,
                 closedClass: 'closed',
-                childrenClass: 'has-children'
+                childrenClass: 'has-children',
+                inlineStyles: true
             }        
 
             $.extend(defaults, options);
@@ -40,8 +41,10 @@
         {
 
             var items = $("li", obj);
-            $(obj).css('list-style','none').css('cursor','pointer');
-            $("ul,li",obj).css('list-style','none').css('cursor','pointer');
+            if(options.inlineStyles){
+                $(obj).css('list-style','none').css('cursor','pointer');
+                $("ul,li",obj).css('list-style','none').css('cursor','pointer');
+            }
             initializeSubMenu(obj,0);
         }
         

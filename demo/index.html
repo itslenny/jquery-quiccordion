@@ -37,15 +37,34 @@
                 padding: 5px;
             }
             
-            #accordion a:hover{
-                background: #bbffbb;
-                color: white;
+            #accordion .has-children>a:before{
+                content: "";
+                display: inline-block;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid black;
+                width: 0px;
+                height: 0px;
+                margin-right: 5px;
             }
             
+            #accordion a:hover{
+                background: #ddffdd;
+                color: black;
+            }
+
             #accordion .has-children.closed a{
                 background: #888888;
                 color: #ddffdd;
             }
+            
+            #accordion .has-children.closed>a:before{
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid black;
+                margin-top: -5px;
+            }
+                        
             #accordion .has-children{
 
             }

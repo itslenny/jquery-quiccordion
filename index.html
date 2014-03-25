@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiccordion demo</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/jquery.quiccordion.pack.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+                $("#accordion").quiccordion();
+                
+                $("#accordion a").click(function(e){
+                    e.preventDefault();
+                    if(!$(this).parent().hasClass('has-children')){
+                        window.open('http://www.google.com/search?q='+$(this).html());
+                    }
+                });
+            });
+        </script>
+        
+        <style>
+            body,html{
+                margin: 0;
+                padding: 0;
+                font-family: Arial;
+            }
+            #accordion{
+                width: 400px;
+                background: #444444;
+                color: white;
+            }
+            #accordion a{
+                display: block;
+                background: #dddddd;
+                color: #000000;
+                text-decoration: none;
+                padding: 5px;
+            }
+            
+            #accordion .has-children>a:before{
+                content: "";
+                display: inline-block;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid black;
+                width: 0px;
+                height: 0px;
+                margin-right: 5px;
+            }
+            
+            #accordion a:hover{
+                background: #ddffdd;
+                color: black;
+            }
+
+            #accordion .has-children.closed a{
+                background: #888888;
+                color: #ddffdd;
+            }
+            
+            #accordion .has-children.closed>a:before{
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid black;
+                margin-top: -5px;
+            }
+                        
+            #accordion .has-children{
+
+            }
+            #accordion li{
+
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Quiccordion - Default Settings</h3>
+        <p>For options see <a href="https://github.com/itslenny/jquery-quiccordion">github</a>.</p>
+        <ul id="accordion">
+            <li>
+                <a href="#">Food</a>
+                <ul>
+                    <li>
+                        <a href="#">Fruit</a>
+                        <ul>
+                            <li>
+                                <a href="#">Apples</a>
+                                <ul>
+                                    <li><a href="#">Red Delicious</a></li>
+                                    <li><a href="#">Golden Delicious</a></li>
+                                    <li><a href="#">Granny Smith</a></li>
+                                    <li><a href="#">Honeycrisp</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Citrus</a>
+                                <ul>
+                                    <li><a href="#">Oranges</a></li>
+                                    <li><a href="#">Grapefruit</a></li>
+                                    <li><a href="#">Clementines</a></li>
+                                    <li><a href="#">Lemons</a></li>
+                                    <li><a href="#">Limes</a></li>
+                                    <li><a href="#">Kumquat</a></li>
+                                </ul>                        
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Vegetables</a>
+                        <ul>
+                            <li><a href="#">Celery</a></li>
+                            <li><a href="#">Broccoli</a></li>
+                            <li><a href="#">Cauliflower</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Sports</a>
+                <ul>
+                    <li><a href="#">Baseball</a></li>
+                    <li><a href="#">Softball</a></li>
+                    <li><a href="#">Basketball</a></li>
+                    <li><a href="#">Football</a></li>
+                    <li><a href="#">Basketball</a></li>
+                    <li><a href="#">Soccer</a></li>
+                    <li><a href="#">Rugby</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Dances</a>
+                <ul>
+                    <li><a href="#">Mambo</a></li>
+                    <li><a href="#">Tango</a></li>
+                    <li><a href="#">Foxtrot</a></li>
+                </ul>
+            </li>
+        </ul>
+    </body>
+</html>

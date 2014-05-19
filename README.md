@@ -7,6 +7,9 @@ This project is aimed at creating the simplest possible accordion plugin for jQu
 
 This project has no frills and never will. If you simply want your UL too expand / collapse this is the project for you.
 
+See it in action: [DEMO](http://itslenny.github.io/jquery-quiccordion/)
+
+
 ## USAGE
 
 Using quiccordion couldn't be simpler. Just include jQuery and the plugin on a page and initilize the module using the `quiccordion` method.
